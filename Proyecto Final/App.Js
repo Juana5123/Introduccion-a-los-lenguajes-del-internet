@@ -123,7 +123,7 @@ function generateCustomDescription(p){
   const base = categoryPhrases[p.category] || categoryPhrases['default'];
   // Añadir un toque con el precio
   const priceHint = p.price > 100 ? "un articulo premium" : "excelente compra";
-  return `${base} Es ${priceHint}`;
+  return `${base} , Es ${priceHint}`;
 }
 
 async function cargarYRenderizarProductos(){
@@ -269,5 +269,4 @@ function init(){
   updateUIForAuth();
   cargarYRenderizarProductos();
 }
-
 init();
