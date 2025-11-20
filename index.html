@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Proyecto Final</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>Tienda Demo</h1>
+    <div class="user-area">
+      <span id="user-greeting" class="hidden">¡Hola, <span id="username"></span>!</span>
+      <button id="btn-login">Iniciar sesion</button>
+      <button id="btn-logout" class="hidden">Cerrar sesión</button>
+      <button id="btn-open-cart">Carrito (<span id="cart-count">0</span>)</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="catalogo-productos" aria-label="Catálogo de productos" class="catalog"></section>
+
+    <aside id="carrito" class="cart hidden" aria-label="Carrito de compras">
+      <h2>Tu Carrito</h2>
+      <div id="carrito-items"></div>
+      <div class="cart-summary">
+        <strong>Total:</strong> $<span id="cart-total">0.00</span>
+      </div>
+      <div class="cart-actions">
+        <button id="btn-clear-cart">Vaciar carrito</button>
+        <button id="btn-checkout">Pagar</button>
+      </div>
+    </aside>
+  </main>
+
+  <div id="modal-login" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="login-title">
+    <div class="modal-content">
+      <h2 id="login-title">Iniciar sesion</h2>
+      <form id="form-login">
+        <label>
+          Email
+          <input type="email" id="login-email" placeholder="eve.holt@reqres.in" required />
+        </label>
+        <label>
+          Contraseña
+          <input type="password" id="login-password" placeholder="cityslicka" required />
+        </label>
+        <div class="modal-actions">
+          <button type="submit">Entrar</button>
+          <button type="button" id="demo-login">Login demo</button>
+          <button type="button" id="close-login">Cancelar</button>
+        </div>
+      </form>
+      <p id="login-error" class="error hidden"></p>
+    </div>
+  </div>
+
+  <template id="product-card-template">
+    <article class="product-card">
+      <img class="product-image" alt="" />
+      <div class="product-info">
+        <h3 class="product-title"></h3>
+        <p class="product-desc"></p>
+        <div class="product-meta">
+          <span class="product-price">$0.00</span>
+          <button class="btn-add">Añadir al carrito</button>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
